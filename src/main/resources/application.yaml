@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      database: books
+      username: mongo
+      password: RA6XdvZLNp
+      authentication-database: admin

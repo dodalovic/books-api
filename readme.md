@@ -1,5 +1,7 @@
 # Getting Started
 
+Spring Boot + Kotlin + MongoDB based demo rest API
+
 ## Requires:
 
 1. `docker-compose`

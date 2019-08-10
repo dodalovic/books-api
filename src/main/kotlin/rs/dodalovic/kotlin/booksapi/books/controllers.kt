@@ -13,7 +13,8 @@ class BooksController(private val booksService: BooksService) {
     fun getAllBooks() = booksService.getAllBooks()
 
     @GetMapping("/{bookId}")
-    fun getBook(@PathVariable bookId: String) = booksService.getBook(bookId)
+    fun getBook(@PathVariable bookId: String) =
+        booksService.getBook(bookId) ?: throw NoSuchEntityException("No such book $bookId")
 }
 
 @RestController
@@ -26,5 +27,6 @@ class AuthorsControllers(private val authorsService: AuthorsService) {
     fun getAllAuthors() = authorsService.getAllAuthors()
 
     @GetMapping("/{authorId}")
-    fun getBook(@PathVariable authorId: String) = authorsService.getAuthor(authorId)
+    fun getBook(@PathVariable authorId: String) =
+        authorsService.getAuthor(authorId) ?: throw NoSuchEntityException("No such author $authorId")
 }

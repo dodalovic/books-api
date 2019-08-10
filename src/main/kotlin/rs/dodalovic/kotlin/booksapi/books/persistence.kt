@@ -3,6 +3,7 @@ package rs.dodalovic.kotlin.booksapi.books
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.repository.CrudRepository
+import org.springframework.data.repository.PagingAndSortingRepository
 import org.springframework.stereotype.Repository
 
 @Document("books")
@@ -12,7 +13,7 @@ class Book(@Id val id: String? = null, val name: String, val authorId: String)
 class Author(@Id val id: String? = null, val name: String)
 
 @Repository
-interface BooksRepo : CrudRepository<Book, String>
+interface BooksRepo : PagingAndSortingRepository<Book, String>
 
 @Repository
-interface AuthorsRepo : CrudRepository<Author, String>
+interface AuthorsRepo : PagingAndSortingRepository<Author, String>
